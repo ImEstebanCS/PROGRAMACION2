@@ -9,7 +9,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Hotel hotel = new Hotel();
         menu(hotel, scanner);
-        scanner.close();  // Cerrar el scanner al final del uso
+        scanner.close();
     }
 
     public static void menu(Hotel hotel, Scanner scanner) {
@@ -18,7 +18,7 @@ public class Main {
             System.out.println("--------------------------------");
             System.out.println("Por favor seleccione la opción que desea:");
             System.out.println("1. Reservar");
-            System.out.println("2. Inicializar Datos");
+            System.out.println("2. Mostrar cantidad de reservas");
             System.out.println("3. Salir");
             System.out.println("--------------------------------");
             option = scanner.nextInt();
