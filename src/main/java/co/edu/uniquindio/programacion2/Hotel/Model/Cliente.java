@@ -1,15 +1,21 @@
 package co.edu.uniquindio.programacion2.Hotel.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cliente {
     private String nombre;
     private String dni;
-    private Integer cantidadReservas;
+    
+    private List<Reserva> reservas;
+    
     public Cliente(){}
 
-    public Cliente(String nombre, String dni, Integer cantidadReservas){
+    public Cliente(String nombre, String dni){
         this.nombre=nombre;
         this.dni=dni;
-        this.cantidadReservas=cantidadReservas;
+        
+        this.reservas = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -28,11 +34,23 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public Integer getCantidadReservas() {
-        return cantidadReservas;
+    public List<Reserva> getReservas() {
+        return reservas;
     }
 
-    public void setCantidadReservas(Integer cantidadReservas) {
-        this.cantidadReservas = cantidadReservas;
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
     }
+
+    public void agregarReserva(Reserva reserva){
+        this.reservas.add(reserva);
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente [nombre=" + nombre + ", dni=" + dni + ", reservas=" + reservas + "]";
+    }
+
+    
+
 }
