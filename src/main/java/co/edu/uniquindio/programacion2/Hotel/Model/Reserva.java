@@ -3,7 +3,7 @@ package co.edu.uniquindio.programacion2.Hotel.Model;
 public class Reserva {
     private String fechaEntrada;
     private String fechaSalida;
-    Habitacion habitacion;
+    private Habitacion habitacion;
 
     public Reserva(String fechaEntrada, String fechaSalida, Habitacion habitacion) {
         this.fechaEntrada = fechaEntrada;

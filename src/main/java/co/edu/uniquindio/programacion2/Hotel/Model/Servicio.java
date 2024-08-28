@@ -1,5 +1,7 @@
 package co.edu.uniquindio.programacion2.Hotel.Model;
 
+import co.edu.uniquindio.programacion2.Hotel.Services.Consumible;
+
 public class Servicio implements Consumible {
     private String nombre;
     
