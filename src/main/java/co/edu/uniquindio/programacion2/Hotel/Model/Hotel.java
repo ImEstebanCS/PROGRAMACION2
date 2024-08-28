@@ -16,9 +16,6 @@ public class Hotel {
     public Hotel() {
     }
 
-    public void inicializarDatos() {
-        System.out.println("Inicializando datos");
-    }
 
     public void agregarReserva(Reserva reserva){
         this.reservas.add(reserva);
@@ -33,29 +30,22 @@ public class Hotel {
      */
     public void reservar() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Por favor ingrese su nombre:");
         String nombre = scanner.nextLine();
-
         System.out.println("Por favor ingrese su DNI:");
         String dni = scanner.nextLine();
-
         Cliente cliente = buscarClientePorDni(dni);
         if (cliente == null) {
             cliente = new Cliente(nombre, dni);
             clientes.add(cliente);
         }
-
         System.out.println("Por favor ingrese la fecha de entrada (en formato YYYY-MM-DD):");
         String fechaEntrada = scanner.nextLine();
-
         System.out.println("Por favor ingrese la fecha de salida (en formato YYYY-MM-DD):");
         String fechaSalida = scanner.nextLine();
-
         System.out.println("Por favor ingrese el número de la habitación:");
         Integer numeroHabitacion = scanner.nextInt();
         scanner.nextLine();
-
         System.out.println("Por favor ingrese el tipo de habitación \nSimple\nDoble\nSuite");
         String tipoDeHabitacion = scanner.nextLine();
         TipoHabitacion tipoHabitacion;
@@ -68,15 +58,12 @@ public class Hotel {
                 tipoHabitacion = TipoHabitacion.SIMPLE;
             }
         }
-
         System.out.println("Por favor ingrese el precio de la habitación:");
         float precio = scanner.nextFloat();
         scanner.nextLine();
-
         Reserva reserva = new Reserva(fechaEntrada, fechaSalida, new Habitacion(numeroHabitacion, tipoHabitacion, precio));
         cliente.agregarReserva(reserva);
         reservas.add(reserva);
-
         System.out.println("Reserva realizada con éxito.");
         System.out.println("Cliente: " + cliente.getNombre());
         System.out.println("Reserva desde " + reserva.getFechaEntrada() + " hasta " + reserva.getFechaSalida());
