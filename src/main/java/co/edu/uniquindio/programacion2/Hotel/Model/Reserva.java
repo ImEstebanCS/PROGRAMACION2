@@ -1,37 +1,20 @@
 package co.edu.uniquindio.programacion2.Hotel.Model;
 
+import java.time.LocalDateTime;
+
 public class Reserva {
-    private String fechaEntrada;
-    private String fechaSalida;
+    private String idReserva;
+    private LocalDateTime fechaEntrada;
+    private LocalDateTime fechaSalida;
     private Habitacion habitacion;
 
-    public Reserva(String fechaEntrada, String fechaSalida, Habitacion habitacion) {
+    public Reserva(){}
+
+    public Reserva(String idReserva, LocalDateTime fechaEntrada, LocalDateTime fechaSalida, Habitacion habitacion) {
+        this.idReserva = idReserva;
         this.fechaEntrada = fechaEntrada;
-        this.fechaSalida=fechaSalida;
-        this.habitacion= habitacion;
-    }
-
-    public String getFechaEntrada() {
-        return fechaEntrada;
-    }
-
-    public void setFechaEntrada(String fechaEntrada) {
-        this.fechaEntrada = fechaEntrada;
-    }
-
-    public String getFechaSalida() {
-        return fechaSalida;
-    }
-
-    public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
-    }
-
-    
-    @Override
-    public String toString() {
-        return "Reserva [fechaEntrada=" + fechaEntrada + ", fechaSalida=" + fechaSalida + ", habitacion=" + habitacion
-                + "]";
+        this.habitacion = habitacion;
     }
 
     public Habitacion getHabitacion() {
@@ -42,7 +25,37 @@ public class Reserva {
         this.habitacion = habitacion;
     }
 
-    
+    public String getIdReserva() {
+        return idReserva;
+    }
 
-    
+    public void setIdReserva(String idReserva) {
+        this.idReserva = idReserva;
+    }
+
+    public LocalDateTime getFechaEntrada() {
+        return fechaEntrada;
+    }
+
+    public void setFechaEntrada(LocalDateTime fechaEntrada) {
+        this.fechaEntrada = fechaEntrada;
+    }
+
+    public LocalDateTime getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public void setFechaSalida(LocalDateTime fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "idReserva='" + idReserva + '\'' +
+                ", fechaEntrada=" + fechaEntrada +
+                ", fechaSalida=" + fechaSalida +
+                ", habitacion=" + habitacion +
+                '}';
+    }
 }

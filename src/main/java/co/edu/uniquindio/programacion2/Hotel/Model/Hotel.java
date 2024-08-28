@@ -1,5 +1,7 @@
 package co.edu.uniquindio.programacion2.Hotel.Model;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -204,13 +206,47 @@ public class Hotel {
      * MÉTODO PARA BUSCAR HABITACION POR NUMERO
      */
 
-    private Habitacion buscarHabitacionPorNumero(Cliente cliente, int numeroHabitacion) {
+    public Habitacion buscarHabitacionPorNumero(Cliente cliente, int numeroHabitacion) {
         for (Reserva reserva : cliente.getReservas()) {
             Habitacion habitacion = reserva.getHabitacion();
             if (habitacion.getNumeroHabitacion() == numeroHabitacion) {
                 return habitacion;
             }
         }
-        return null; 
+        return null;
     }
+
+
+    public void costoEstadia(String dNI, String idReserva){
+        int dias = calcularDias(dNI, idReserva);
+        float costo = costoHabitacion(buscarReserva(idReserva, buscarClientePorDni(dNI).getReservas()));
+        float costoTotal = dias * costo;
+
+        System.out.println("El costo de la estadía es: " + costoTotal + " , espero que vuelvas =). ");
+    }
+
+    public Reserva buscarReserva(String iDReserva, List<Reserva> reservas){
+        for (Reserva reserva : reservas){
+            if(iDReserva.equals(reserva.getIdReserva())){
+                return reserva;
+            }
+        }
+    }
+
+    public int calcularDias(String dNI, String iDReserva){
+        Reserva reservaCliente = buscarReserva(iDReserva, buscarClientePorDni(dNI).getReservas());
+        long diferenciaDias = calcularDiferenciaEnDias(reservaCliente.getFechaEntrada(), reservaCliente.getFechaSalida());
+
+        return (int) diferenciaDias;
+    }
+
+    public long calcularDiferenciaEnDias(LocalDateTime fechaInicial, LocalDateTime fechaFinal) {
+        return ChronoUnit.DAYS.between(fechaInicial, fechaFinal);
+    }
+
+    public float costoHabitacion(Reserva reserva){
+        float costo = reserva.getHabitacion().getPrecio();
+        return costo;
+    }
+
 }
