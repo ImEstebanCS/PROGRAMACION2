@@ -10,8 +10,7 @@ public class Reserva {
 
     public Reserva(){}
 
-    public Reserva(String idReserva, LocalDateTime fechaEntrada, LocalDateTime fechaSalida, Habitacion habitacion) {
-        this.idReserva = idReserva;
+    public Reserva(LocalDateTime fechaEntrada, LocalDateTime fechaSalida, Habitacion habitacion) {
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
         this.habitacion = habitacion;

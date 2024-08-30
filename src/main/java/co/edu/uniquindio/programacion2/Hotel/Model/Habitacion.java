@@ -3,22 +3,19 @@ package co.edu.uniquindio.programacion2.Hotel.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.edu.uniquindio.programacion2.Hotel.Services.TipoHabitacion;
-
 public class Habitacion {
-    private Integer numeroHabitacion;
-    private TipoHabitacion tipoHabitacion;
+    private int numeroHabitacion;
+    private String tipoHabitacion;
     private float precio;
-    private List<Servicio> servicios;
+    private final List<Servicio> servicios = new ArrayList<>();
 
-    public Habitacion(Integer numeroHabitacion, TipoHabitacion tipoHabitacion, float precio) {
+    public Habitacion(int numeroHabitacion, String tipoHabitacion, float precio) {
         this.numeroHabitacion = numeroHabitacion;
         this.tipoHabitacion = tipoHabitacion;
         this.precio = precio;
-        this.servicios = new ArrayList<>();
     }
 
-    public Integer getNumeroHabitacion() {
+    public int getNumeroHabitacion() {
         return numeroHabitacion;
     }
 
@@ -26,11 +23,11 @@ public class Habitacion {
         this.numeroHabitacion = numeroHabitacion;
     }
 
-    public TipoHabitacion getTipoHabitacion() {
+    public String getTipoHabitacion() {
         return tipoHabitacion;
     }
 
-    public void setTipoHabitacion(TipoHabitacion tipoHabitacion) {
+    public void setTipoHabitacion(String tipoHabitacion) {
         this.tipoHabitacion = tipoHabitacion;
     }
 
@@ -46,7 +43,7 @@ public class Habitacion {
         this.servicios.add(servicio);
     }
 
-    
+
 
     public List<Servicio> getServicios() {
         return servicios;
@@ -55,6 +52,6 @@ public class Habitacion {
     @Override
     public String toString() {
         return "Habitación número " + numeroHabitacion + " (" + tipoHabitacion + ") - Precio: $" + precio +
-               "\nServicios: " + servicios;
+                "\nServicios: " + servicios;
     }
 }

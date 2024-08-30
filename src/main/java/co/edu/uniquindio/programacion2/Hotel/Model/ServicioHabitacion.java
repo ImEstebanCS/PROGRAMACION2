@@ -1,8 +1,8 @@
 package co.edu.uniquindio.programacion2.Hotel.Model;
 
-public class ServicioDeHabitacion extends Servicio {
+public class ServicioHabitacion extends Servicio {
 
-    public ServicioDeHabitacion() {
+    public ServicioHabitacion() {
         super("Servicio de Habitación");
     }
 
