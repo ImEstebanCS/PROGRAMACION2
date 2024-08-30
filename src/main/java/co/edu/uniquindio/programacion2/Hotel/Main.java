@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import co.edu.uniquindio.programacion2.Hotel.Model.Cliente;
+import co.edu.uniquindio.programacion2.Hotel.Model.Habitacion;
+import co.edu.uniquindio.programacion2.Hotel.Model.Hotel;
+import co.edu.uniquindio.programacion2.Hotel.Model.Reserva;
+import co.edu.uniquindio.programacion2.Hotel.Model.Servicio;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -17,7 +23,6 @@ public class Main {
 
     // Método para inicializar datos quemados
     public static void inicializarDatos(Hotel hotel) {
-        Hotel hotel= new Hotel();
         // Crear clientes
         Cliente cliente1 = new Cliente("Juan Pérez", "12345678");
         Cliente cliente2 = new Cliente("Maria Lopez", "87654321");
@@ -43,8 +48,8 @@ public class Main {
         hotel.agregarReserva(reserva2);
 
         // Crear servicios
-        Servicio servicio1 = new Servicio("Desayuno", 15.0f);
-        Servicio servicio2 = new Servicio("Spa", 30.0f);
+        Servicio servicio1 = new Servicio("Restaurante");
+        Servicio servicio2 = new Servicio("Spa");
 
         // Agregar servicios a las habitaciones
         habitacion1.agregarServicio(servicio1);
@@ -79,7 +84,7 @@ public class Main {
                     break;
                 case 4:
                     List<Servicio> servicios = new ArrayList<>();
-                    servicios.add(new Servicio("Room Service", 20.0f)); // Ejemplo de servicio adicional
+                    servicios.add(new Servicio("Spa")); // Ejemplo de servicio adicional
                     hotel.serviciosCliente(hotel.getClientes().get(0), 101, servicios);  // Utiliza datos quemados
                     break;
                 case 5:

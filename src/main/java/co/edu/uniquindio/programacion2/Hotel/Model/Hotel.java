@@ -32,6 +32,30 @@ public class Hotel {
         mostrarConfirmacion(cliente, reserva);
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public List<Reserva> getReservas() {
+        return reservas;
+    }
+
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
     private void mostrarConfirmacion(Cliente cliente, Reserva reserva) {
         System.out.println("Reserva realizada con éxito.");
         System.out.println("Cliente: " + cliente.getNombre());
