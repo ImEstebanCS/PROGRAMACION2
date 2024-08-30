@@ -9,13 +9,15 @@ public class Main {
 
     public static void main(String[] args) {
         // Crear una instancia del hotel
-        Hotel hotel = new Hotel("Hotel Ejemplo");
+        var hotel = new Hotel("cualquiera");
+
         inicializarDatos(hotel);  // Inicializar los datos quemados con la instancia del hotel
         mostrarMenu(hotel);  // Pasar la instancia del hotel al menú
     }
 
     // Método para inicializar datos quemados
     public static void inicializarDatos(Hotel hotel) {
+        Hotel hotel= new Hotel();
         // Crear clientes
         Cliente cliente1 = new Cliente("Juan Pérez", "12345678");
         Cliente cliente2 = new Cliente("Maria Lopez", "87654321");
